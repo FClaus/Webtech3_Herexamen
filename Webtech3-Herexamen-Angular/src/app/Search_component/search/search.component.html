@@ -3,18 +3,36 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Frederic Claus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    
+    <h2>Frederic Claus</h2>
         <button routerLink="/list">Lijst</button>
         <button routerLink="/search">Zoeken</button>
         
     <form>
         <h3>Zoek op opnameplaats straat: </h3>
         <input #opnameplaats type="text" name="opnameplaats" required>
-        <button (click)="onSubmit()">Zoeken</button>
     </form>
+
+    <button (click)="onSubmitStraat(opnameplaats.value)">Zoeken</button>
+
+    <form>
+            <h3>Zoek op aantal overtreding meer of gelijk aan: </h3>
+            <input #aantalOvertredingen type="number" name="aantalOvertredingen" required>
+        </form>
+        <button (click)="onSubmitSnelheid(aantalOvertredingen.value)">Zoeken</button>
+
+        <hr>
+        <ul>
+            <li *ngFor="let Overtreding of overtredingenArray">
+                    <p> <b>aantal_overtredingen_roodlicht: </b>{{Overtreding.aantal_overtredingen_roodlicht}} </p>
+                    <p> <b>aantal_overtredingen_snelheid: </b> {{Overtreding.aantal_overtredingen_snelheid}} </p>
+                    <p> <b>datum_vaststelling: </b> {{Overtreding.datum_vaststelling}} </p>
+                    <p> <b>opnameplaats_straat: </b> {{Overtreding.opnameplaats_straat}} </p>
+                    <br>
+                </li>
+            </ul>
 </body>
 </html>
