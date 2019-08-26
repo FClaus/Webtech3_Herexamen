@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zoeken</title>
+</head>
+<body>
+        <form action='/' method='GET'>
+            <button type='submit'>Home</button>
+        </form>
+        <form action='/list' method='GET'>
+            <button type='submit'>lijst</button>
+        </form>
+        
+        <form action='/search' method='POST'>
+            <h2>Zoeken op opnameplaats straat</h2>
+            <input type="text" placeholder="Search" name="straat">
+            <span><button type='submit'>Search</button></span>
+        </form>
+        <hr>
+
+        <ul class='overtredingen'>
+                <% for(var i=0; i < overtredingen.length; i++) {%>
+                  <li class='overtredingen'>
+                    <span><b>datum_vaststelling:</b> <%= overtredingen[i].datum_vaststelling %></span><br /><br />
+                    <span><b>opnameplaats_straat:</b> <%= overtredingen[i].opnameplaats_straat %></span><br /><br />
+                    <span><b>aantal_overtredingen_snelheid : </b><%= overtredingen[i].aantal_overtredingen_snelheid %></span><br /><br />
+                    <span><b>aantal_overtredingen_roodlicht : </b><%= overtredingen[i].aantal_overtredingen_roodlicht %></span><br /><br />
+                    <br>
+                  </li>
+                <% } %>
+                </ul>
+              <br /> 
+        <br>
+</body>
+</html>
