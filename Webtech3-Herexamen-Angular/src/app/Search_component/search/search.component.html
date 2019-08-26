@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+        <button routerLink="/list">Lijst</button>
+        <button routerLink="/search">Zoeken</button>
+        
+    <form>
+        <h3>Zoek op opnameplaats straat: </h3>
+        <input #opnameplaats type="text" name="opnameplaats" required>
+        <button (click)="onSubmit()">Zoeken</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+        <button routerLink="/list">Lijst</button>
+        <button routerLink="/search">Zoeken</button>
+        
+        <h3>Alle overtredingen: </h3>
+        <ul>
+            <li *ngFor="let overtredingen of overtredingenArray">
+            <p> <b>id:</b> {{overtredingen.id}} </p>
+            <p> <b>aantal_overtredingen_roodlicht: </b>{{overtredingen.aantal_overtredingen_roodlicht}} </p>
+            <p> <b>aantal_overtredingen_snelheid: </b> {{overtredingen.aantal_overtredingen_snelheid}} </p>
+            <p> <b>aantal_passanten: </b> {{overtredingen.aantal_passanten}} </p>
+            <p> <b>datum_vaststelling: </b> {{overtredingen.owned}} </p>
+            <p> <b>datum_vaststelling_jaar: </b> {{overtredingen.datum_vaststelling_jaar}} </p>
+            <p> <b>datum_vaststelling_maand: </b>  {{overtredingen.datum_vaststelling_maand}} </p>
+            <p> <b>datum_vaststelling_maand: </b> {{overtredingen.datum_vaststelling_maand}} </p>
+            <p> <b>opnameplaats_rijrichting_gaand: </b> {{overtredingen.opnameplaats_rijrichting_gaand}} </p>
+            <p> <b>opnameplaats_straat: </b> {{overtredingen.opnameplaats_straat}} </p>
+            <p> <b>opnameplaats_zone_snelheid: </b> {{overtredingen.opnameplaats_zone_snelheid}} </p>
+            <br>
+            </li>
+        </ul>
+</body>
+</html>
