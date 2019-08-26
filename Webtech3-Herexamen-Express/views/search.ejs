@@ -6,6 +6,7 @@
     <title>Zoeken</title>
 </head>
 <body>
+    <h2>FREDERIC CLAUS</h2>
         <form action='/' method='GET'>
             <button type='submit'>Home</button>
         </form>
@@ -16,6 +17,12 @@
         <form action='/search' method='POST'>
             <h2>Zoeken op opnameplaats straat</h2>
             <input type="text" placeholder="Search" name="straat">
+            <span><button type='submit'>Search</button></span>
+        </form>
+
+        <form action='/searchAantal' method='POST'>
+            <h2>Zoeken op aantal overtredingen snelheid</h2>
+            <input type="number" placeholder="Search" name="aantal">
             <span><button type='submit'>Search</button></span>
         </form>
         <hr>

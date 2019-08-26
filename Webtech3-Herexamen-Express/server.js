@@ -28,8 +28,15 @@ MongoClient.connect('mongodb://127.0.0.1:27017/examen', (err, database) => {
         })
       })
 
-      app.post('/search', (req,res) => {
+      app.post('/searchAantal', (req,res) => {
+    
+        db.collection('overtredingen').find({aantal_overtredingen_snelheid: {$gte: parseInt(req.body.aantal)}}).toArray(function(err, result) {
+            if (err) return console.log(err)
+            res.render('search.ejs', { overtredingen: result})
+        })
+    })
 
+      app.post('/search', (req,res) => {
         db.collection('overtredingen').find({opnameplaats_straat: req.body.straat}).toArray(function(err, result) {
             if (err) return console.log(err)
             res.render('search.ejs', { overtredingen: result})
